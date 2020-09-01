@@ -1,11 +1,11 @@
 # JavaFX FileEncrypter Application
 
 ### Frontend
-This GUI app has a drag and drop feature, where there is a file area,
-which makes it very intuitive of how to decrypt and encrypt files!
+This GUI app has a drag and drop feature, where there are two file areas,
+which makes the action of encrypting and decrypting files very intuitive.
 
 ### Security notes
 Note that the security of the encryption is not that tight.
 I think that if you really wanted to decrypt someone's files,
-you could with ease without knowing the users password (encryption key)
+you could do that with ease, without knowing the user's password (encryption key).
 
