@@ -1,0 +1,92 @@
+* {
+    -fx-alignment: center;
+    -fx-background: #708ebc;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Varela Round';
+}
+
+#container {
+    -fx-pref-height: 500;
+    -fx-pref-width: 500;
+    -fx-spacing: 10px;
+}
+
+.button {
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+}
+
+.first-prompt {
+    -fx-spacing: 10px;
+}
+
+#password-input-container {
+    -fx-spacing: 10px;
+}
+
+.input-fields {
+    -fx-pref-width: 250;
+}
+
+.error-message {
+    -fx-text-fill: #b22222;
+}
+
+#info-message {
+    -fx-wrap-text: true;
+}
+
+.back-or-continue {
+    -fx-spacing: 10px;
+}
+
+/* State based selectors */
+
+.finished .first-prompt {
+    visibility: hidden;
+}
+
+.finished .second-prompt {
+    visibility: visible;
+}
+
+.second-prompt {
+    -fx-max-width: 400;
+    visibility: hidden;
+}
+
+.back-or-continue {
+    visibility: hidden;
+}
+
+.finished .back-or-continue {
+    visibility: visible;
+}
+
+.finished .new-password-button {
+    visibility: hidden;
+}
+
+.password-field-visible {
+    visibility: hidden;
+}
+
+.show-password .password-field-visible {
+    visibility: visible;
+}
+
+.show-password .password-field-hidden {
+    visibility: hidden;
+}
+
+.first-prompt-hidden {
+    visibility: hidden;
+}
+
+.input-error .first-prompt-visible {
+    visibility: hidden;
+}
+
+.input-error .first-prompt-hidden {
+    visibility: visible;
+}

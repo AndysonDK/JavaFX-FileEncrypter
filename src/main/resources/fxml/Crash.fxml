@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<VBox id="container" stylesheets="/css/Crash.css" xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.atmos.controller.CrashController">
+    <Label styleClass="crash-message" text="The program CRASHED because it couldn't handle this exception cause:"/>
+    <Label id="crashCause" styleClass="crash-message" text="${controller.crashCause}"/>
+</VBox>

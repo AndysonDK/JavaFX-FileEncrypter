@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:id="container"
+      stylesheets="/css/Setup.css"
+      fx:controller="com.atmos.controller.SetupController">
+
+    <StackPane>
+        <VBox styleClass="first-prompt">
+            <StackPane>
+                <Label styleClass="first-prompt-visible"
+                       text="Type in the password you want to use for this application"/>
+                <VBox styleClass="first-prompt-hidden">
+                    <Label styleClass="error-message" text="You must type in a password not nothingness idiot"/>
+                    <Label styleClass="error-message" text="White space is not accepted"/>
+                </VBox>
+            </StackPane>
+            <HBox id="password-input-container">
+                <StackPane>
+                    <TextField fx:id="textField" styleClass="password-field-visible, input-fields"/>
+                    <PasswordField fx:id="passwordField" styleClass="password-field-hidden, input-fields"/>
+                </StackPane>
+                <CheckBox fx:id="checkBox" onAction="#handleCheckBox" text="show password"/>
+            </HBox>
+        </VBox>
+        <VBox styleClass="second-prompt">
+            <Label id="info-message">
+            Are you sure that this is the password you want to use for this application?
+            You can always change the password back again, by deleting the "data.enc" file
+            which is inside the parent folder of the running .exe file. NOTE: The application must
+            be closed before you do that. WARNING: If you change your password by deleting the "data.enc" file.
+            You must decrypt your encrypted files FIRST or else you won't be able to
+            decrypt them after you have changed your password, since the older
+            decrypted files have been decrypted with your older password.
+            </Label>
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <Button styleClass="new-password-button, button" text="set new password" onAction="#handleNewPasswordButton"/>
+        <HBox styleClass="back-or-continue">
+            <Button styleClass="button" text="go back" onAction="#handleBackButton"/>
+            <Button styleClass="button" text="continue" onAction="#handleContinueButton"/>
+        </HBox>
+    </StackPane>
+</VBox>

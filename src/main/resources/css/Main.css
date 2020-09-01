@@ -1,0 +1,203 @@
+* {
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Varela Round';
+    -fx-background: #708ebc;
+}
+
+#inner-container {
+    -fx-pref-height: 500;
+    -fx-pref-width: 600;
+}
+
+.regions {
+    -fx-pref-width: 250;
+    -fx-pref-height: 250;
+    -fx-border-color: gray;
+    -fx-border-width: 4px;
+    -fx-border-radius: 10px;
+    -fx-background-radius:13px;
+    -fx-background-color: yellow;
+}
+
+#drop-fields {
+    -fx-spacing: 30px;
+}
+
+#password-input-container {
+    -fx-spacing: 10px;
+
+}
+
+#passwordField {
+    -fx-max-width: 300;
+    -fx-border-color: gray;
+    -fx-border-width: 3px;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 10;
+}
+
+#locked-message {
+    -fx-font-weight: bold;
+    -fx-font-size: 26;
+}
+
+#access-message {
+    -fx-font-weight: bold;
+    -fx-font-size: 26;
+    -fx-fill: #32cd32;
+}
+
+#triesLeft {
+    -fx-underline: true;
+}
+
+.incorrect-password {
+    -fx-text-fill: #b22222;
+}
+
+.timer-container {
+    -fx-alignment: top-right;
+    -fx-padding: 1 10 1 1;
+}
+
+.inner-timer-container {
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+    -fx-border-radius: 2px;
+    -fx-padding: 6;
+    -fx-max-width: 65;
+}
+
+.buttons {
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+}
+
+
+/* STATE BASED SELECTORS */
+
+/*other state based selectors*/
+.incorrect-password {
+    visibility: hidden;
+}
+
+.access {
+    visibility: hidden;
+}
+
+.timer-container {
+    visibility: hidden;
+}
+
+.encryption {
+    visibility: hidden;
+}
+
+.decryption {
+    visibility: hidden;
+}
+
+/*access-granted state based selectors*/
+.access-granted .regions {
+    -fx-border-color: #32cd32;
+}
+
+.access-granted #passwordPrompt {
+    visibility: hidden;
+}
+
+.access-granted .access {
+    visibility: visible;
+}
+
+.access-granted .locked {
+    visibility: hidden;
+}
+
+.access-granted #passwordField {
+    visibility: hidden;
+}
+
+.access-granted .timer-container {
+    visibility: visible;
+}
+
+.show-encrypt-button .encryption {
+    visibility: visible;
+}
+
+.show-decrypt-button .decryption {
+    visibility: visible;
+}
+
+/*.wrong-password state based selectors*/
+.wrong-password .regions {
+    -fx-border-color: #b22222;
+    -fx-background-color: #b22222;
+}
+
+.wrong-password #passwordField {
+    -fx-border-color: #b22222;
+}
+
+.wrong-password #passwordField:focused {
+    -fx-border-color: #b22222;
+}
+
+.wrong-password .incorrect-password {
+    visibility: visible;
+}
+
+.wrong-password #passwordPrompt {
+    visibility: hidden;
+}
+
+.wrong-password .access {
+    visibility: hidden;
+}
+
+/*too-many-attempts state based selectors*/
+.too-many-attempts #timerBeforeRetry {
+    -fx-font-size: 30px;
+    -fx-fill: #b22222;
+    -fx-underline: true;
+}
+
+.too-many-attempts .inner-timer-container {
+    -fx-padding: 0;
+    -fx-border-width: 0;
+}
+
+.too-many-attempts .timer-container {
+    -fx-alignment: top-center;
+    visibility: visible;
+    -fx-padding: 0;
+}
+
+.too-many-attempts .main-app {
+    -fx-opacity: 0.1;
+}
+
+.too-many-attempts #passwordField {
+    visibility: hidden;
+}
+
+/*on-drag-entered state based selectors*/
+
+.on-drag-entered * {
+    -fx-background-color: #172330;
+}
+
+.on-drag-entered .regions {
+    -fx-background-color: #239023;
+}
+
+.on-drag-entered #timerBeforeRetry {
+    -fx-fill: white;
+}
+
+.on-drag-entered .buttons {
+    visibility: hidden;
+}

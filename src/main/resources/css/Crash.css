@@ -1,0 +1,22 @@
+* {
+    -fx-alignment: center;
+    -fx-background: red;
+    -fx-font-size: 28px;
+    -fx-font-family: 'Varela Round';
+}
+
+#container {
+    -fx-pref-width: 700;
+    -fx-pref-height: 700;
+    -fx-spacing: 10;
+}
+
+.crash-message {
+    -fx-wrap-text: true;
+    -fx-max-width: 625;
+}
+
+#crashCause {
+    -fx-font-weight: bolder;
+    -fx-underline: true;
+}

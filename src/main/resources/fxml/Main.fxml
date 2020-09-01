@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:id="container"
+      stylesheets="/css/Main.css"
+      fx:controller="com.atmos.controller.MainController">
+
+    <VBox id="inner-container">
+        <VBox styleClass="timer-container">
+            <VBox styleClass="inner-timer-container">
+                <Text text="${controller.timerBeforeRetry}" id="timerBeforeRetry"/>
+            </VBox>
+        </VBox>
+
+        <VBox styleClass="main-app">
+            <StackPane>
+                <HBox styleClass="locked">
+                    <Text text="LOCKED" id="locked-message"/>
+                    <ImageView preserveRatio="true" fitHeight="40">
+                        <Image url="/images/lock-locked.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox styleClass="access">
+                    <Text text="ACCESS GRANTED" id="access-message"/>
+                    <ImageView preserveRatio="true" fitHeight="40">
+                        <Image url="/images/lock-open.png"/>
+                    </ImageView>
+                </HBox>
+            </StackPane>
+            <HBox id="drop-fields">
+                <StackPane>
+                    <Region styleClass="regions"
+                            onDragEntered="#onDragEnteredEncryption"
+                            onDragExited="#onDragExitedEncryption"
+                            onDragOver="#onDragOverEncryption"
+                            onDragDropped="#onDragDroppedEncryption"/>
+                    <Text text="Drag and Drop to ENCRYPT" disable="true"/>
+                </StackPane>
+                <StackPane>
+                    <Region styleClass="regions"
+                            onDragEntered="#onDragEnteredDecryption"
+                            onDragExited="#onDragExitedDecryption"
+                            onDragOver="#onDragOverDecrpytion"
+                            onDragDropped="#onDragDroppedDecryption"/>
+                    <Text text="Drag and Drop to DECRYPT" disable="true"/>
+                </StackPane>
+            </HBox>
+            <HBox>
+                <StackPane>
+                    <Button styleClass="encryption, buttons" text="press ENCRYPT" onAction="#encryptOperation"/>
+                    <Button styleClass="decryption, buttons" text="press DECRYPT" onAction="#decryptOperation"/>
+                </StackPane>
+            </HBox>
+            <VBox id="password-input-container">
+                <StackPane>
+                    <Label text="Please Type password and then enter to perform the desired operation:"
+                           id="passwordPrompt"/>
+                    <HBox styleClass="incorrect-password">
+                        <Label text="The password was not correct. remaining tries left: "/>
+                        <Label text="${controller.remainingTriesLeft}" id="triesLeft"/>
+                    </HBox>
+                </StackPane>
+                <PasswordField fx:id="passwordField" onAction="#handlePassword"/>
+            </VBox>
+        </VBox>
+    </VBox>
+
+</VBox>
